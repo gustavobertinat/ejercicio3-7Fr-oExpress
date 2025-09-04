@@ -16,9 +16,9 @@ public class Main {
 
         // 4 clientes
         sistema.registrarCliente(new Cliente("76.111.111-1", "Restaurante La Parrilla", "Av. Central 123", 600000, 0));
-        sistema.registrarCliente(new Cliente("77.222.222-2", "Supermercado El Ahorro", "Calle 9 #45", 800000, 200000));
-        sistema.registrarCliente(new Cliente("78.333.333-3", "Cafetería Dulce", "Pasaje Norte 77", 150000, 0));
-        sistema.registrarCliente(new Cliente("79.444.444-4", "Sushi Express", "Las Flores 321", 300000, 250000));
+        sistema.registrarCliente(new Cliente("77.222.222-2", "Supermercado El Dorado", "C 9 #45", 800000, 200000));
+        sistema.registrarCliente(new Cliente("78.333.333-3", "Cafetería Guchu", "25 mayo 3333", 150000, 0));
+        sistema.registrarCliente(new Cliente("79.444.444-4", "Sushi Express", "Flores 321", 300000, 250000));
 
         // Caso 1: Pedido OK (ajustado para no alcanzar stock mínimo)
         try {
