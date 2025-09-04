@@ -15,14 +15,14 @@ public class Main {
         sistema.registrarProducto(new Producto("P008", "Helado chocolate", Categoria.HELADOS, -18, 65, 60, 3600));
 
         // 4 clientes
-        sistema.registrarCliente(new Cliente("76.111.111-1", "Restaurante La Parrilla", "Av. Central 123", 600000, 0));
-        sistema.registrarCliente(new Cliente("77.222.222-2", "Supermercado El Dorado", "18 de julio 2525", 800000, 200000));
-        sistema.registrarCliente(new Cliente("78.333.333-3", "Cafetería Guchu", "25 mayo 3333", 150000, 0));
-        sistema.registrarCliente(new Cliente("79.444.444-4", "Sushi Express", "Flores 321", 300000, 250000));
+        sistema.registrarCliente(new Cliente("7611111", "Restaurante La Parrilla", "Av. Central 123", 600000, 0));
+        sistema.registrarCliente(new Cliente("772222222", "Supermercado El Dorado", "18 de julio 2525", 800000, 200000));
+        sistema.registrarCliente(new Cliente("78333333", "Cafetería Guchu", "25 mayo 3333", 150000, 0));
+        sistema.registrarCliente(new Cliente("794444444", "Sushi Express", "Flores 321", 300000, 250000));
 
         // Caso 1: Pedido OK (ajustado para no alcanzar stock mínimo)
         try {
-            Pedido pedido1 = new Pedido("PED-001", "76.111.111-1");
+            Pedido pedido1 = new Pedido("PED-001", "7611111");
             pedido1.agregarItem(new PedidoItem("P001", 10, 5200));
             pedido1.agregarItem(new PedidoItem("P005", 4, 2100)); // antes 5
             sistema.procesarPedido(pedido1);
@@ -33,7 +33,7 @@ public class Main {
 
         // Caso 2: Excede stock
         try {
-            Pedido pedido2 = new Pedido("PED-002", "77.222.222-2");
+            Pedido pedido2 = new Pedido("PED-002", "772222222");
             pedido2.agregarItem(new PedidoItem("P004", 1000, 9800));
             sistema.procesarPedido(pedido2);
             System.out.println("ERROR Caso 2: debería fallar por stock.");
@@ -45,7 +45,7 @@ public class Main {
 
         // Caso 3: Excede crédito
         try {
-            Pedido pedido3 = new Pedido("PED-003", "78.333.333-3");
+            Pedido pedido3 = new Pedido("PED-003", "78333333");
             pedido3.agregarItem(new PedidoItem("P003", 50, 6300)); // 315000 > 150000
             sistema.procesarPedido(pedido3);
             System.out.println("ERROR Caso 3: debería fallar por crédito.");
@@ -72,7 +72,7 @@ public class Main {
 
         // Caso 6: Código inexistente en pedido
         try {
-            Pedido pedido4 = new Pedido("PED-004", "76.111.111-1");
+            Pedido pedido4 = new Pedido("PED-004", "7611111");
             pedido4.agregarItem(new PedidoItem("P999", 5, 1000));
             sistema.procesarPedido(pedido4);
             System.out.println("ERROR Caso 6: debería fallar por código inexistente.");
